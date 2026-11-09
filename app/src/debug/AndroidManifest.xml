@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 디버그 빌드 전용. release/bench에는 포함되지 않는다. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!--
+            내비 음성 안내의 오디오 포커스 요청을 흉내 낸다(에뮬레이터에선 차량이 경로를 따라 움직이지 않아 실제 안내가 나오지 않음).
+            adb shell am broadcast -a ai.syne.app.debug.SIM_NAV_PROMPT -n ai.syne.app/.debug.NavPromptSimReceiver
+        -->
+        <receiver
+            android:name=".debug.NavPromptSimReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ai.syne.app.debug.SIM_NAV_PROMPT" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

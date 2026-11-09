@@ -1,0 +1,47 @@
+# Gradle / build
+.gradle/
+build/
+.kotlin/
+.externalNativeBuild/
+.cxx/
+captures/
+
+# 로컬 설정 (SDK 경로 등 머신별)
+local.properties
+
+# 서명 키·인증서 (절대 커밋 금지) — 릴리스 서명은 keystore.properties(로컬)에서 읽는다
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+keystore.properties
+signing.properties
+
+# 로컬 실행 산출물 (실제 주행 위치·소리가 들어갈 수 있음)
+*.db
+*.db-shm
+*.db-wal
+*.apk
+*.aab
+# 예외: 공모전 제출 규정상 저장소에 포함해야 하는 release APK 한 개만 허용
+!/apk/SYNE_release.apk
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+
+# 서버 측 비밀값 (server/ AI API 키 등)
+.env
+*.env.local
+server/**/secrets*
+
+# design/ — React 디자인 시안(앱 빌드와 무관, Gradle 모듈 아님). 소스만 커밋하고 산출물은 제외
+design/node_modules/
+design/dist/
+design/.vite/
+
+# 리뷰용 캡처(로컬 전용)
+docs/review/
+video/
